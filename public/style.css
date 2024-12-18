@@ -8,7 +8,7 @@
 /* Body */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #F9E6CF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,25 +16,35 @@ body {
   flex-direction: column;
 }
 
-/* Container for the login and registration forms */
-.container {
-  background-color: white;
+/* Authentication container styles */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Authentication Forms */
+.auth-card {
+  background-color: #FFF5D7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 8px;
   width: 100%;
   max-width: 400px;
   margin: 20px;
+  position: absolute;
+  top: 50%; /* Vertically center */
+  left: 50%; /* Horizontally center */
+  transform: translate(-50%, -50%); /* Adjust positioning */
 }
-
-/* Header styling */
 h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
 }
 
-/* Input fields */
 input[type="email"],
 input[type="password"],
 input[type="text"] {
@@ -46,12 +56,11 @@ input[type="text"] {
   font-size: 16px;
 }
 
-/* Submit buttons */
 button {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  background-color: #007bff;
+  background-color: #FAC67A;
   color: white;
   border: none;
   border-radius: 4px;
@@ -61,62 +70,48 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #F5F0CD;
 }
 
-/* Error message styling */
 .error {
   color: red;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-/* Form-specific classes */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Chatbot Interface */
+/* Chatbot Container */
 .chat-container {
   position: fixed;
-  top: 50%; /* Position it vertically in the middle */
-  left: 50%; /* Position it horizontally in the middle */
+  top: 50%; /* Vertically center the chatbot */
+  left: 50%; /* Horizontally center the chatbot */
   transform: translate(-50%, -50%); /* Adjust to perfectly center it */
-  width: 300px;
-  background-color: #fff;
+  display: flex;
+  flex-direction: row; /* Align chat and products horizontally */
+  background-color: #FFF5D7;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   padding: 15px;
+  width: 600px; /* Adjust to allow space for both chat and products */
 }
 
-.chat-header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  font-size: 18px;
-  text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.chat-body {
+.chat-box {
+  flex: 1; /* Allow chat to take up remaining space */
   padding: 10px;
   max-height: 300px;
   overflow-y: auto;
-  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd; /* Border between chat and product list */
 }
 
-.chat-input-container {
+.input-container {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   padding: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
-.chat-input-container input {
+.input-container input {
   width: 80%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -124,7 +119,7 @@ form {
   font-size: 14px;
 }
 
-.chat-input-container button {
+.input-container button {
   width: 18%;
   margin-left: 5px;
   background-color: #28a745;
@@ -136,7 +131,7 @@ form {
   border-radius: 4px;
 }
 
-.chat-input-container button:hover {
+.input-container button:hover {
   background-color: #218838;
 }
 
@@ -169,4 +164,75 @@ form {
 .bot-message .message {
   background-color: #f1f1f1;
   color: black;
+}
+
+/* Product List Styling */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  width: 250px; /* Define width for the product list */
+  overflow-y: auto;
+}
+
+.product-list .product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-list .product-card h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.product-list .product-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-list .product-card .buy-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.product-list .product-card .buy-btn:hover {
+  background-color: #218838;
+}
+
+/* Buttons and Links */
+.btn, .link-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.link-btn {
+  background-color: transparent;
+  color: #007bff;
+  border: none;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 10px;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
 }

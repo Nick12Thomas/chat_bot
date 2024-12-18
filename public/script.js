@@ -7,8 +7,14 @@ const loginForm = document.getElementById('loginForm');
 const loginEmail = document.getElementById('loginEmail');
 const loginPassword = document.getElementById('loginPassword');
 const loginError = document.getElementById('loginError');
+const registerForm = document.getElementById('registerForm');
+const registerEmail = document.getElementById('registerEmail');
+const registerPassword = document.getElementById('registerPassword');
+const registerError = document.getElementById('registerError');
 const authContainer = document.getElementById('authContainer');
 const chatContainer = document.getElementById('chatContainer');
+const showRegisterFormBtn = document.getElementById('showRegisterForm');
+const showLoginFormBtn = document.getElementById('showLoginForm');
 
 // Check if the user is already logged in
 if (localStorage.getItem('authToken')) {
@@ -19,7 +25,7 @@ if (localStorage.getItem('authToken')) {
   chatContainer.style.display = 'none';
 }
 
-// Event listener for the login form
+// Event listener for login form
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = loginEmail.value;
@@ -46,6 +52,48 @@ loginForm.addEventListener('submit', async (e) => {
   }
 });
 
+// Event listener for register form
+registerForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = registerEmail.value;
+  const password = registerPassword.value;
+
+  // Send registration request
+  const response = await fetch('http://localhost:3000/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    // After successful registration, switch to the login form
+    alert('Registration successful! You can now log in.');
+    registerError.style.display = 'none';
+    authContainer.style.display = 'block';
+    document.getElementById('registerCard').style.display = 'none'; // Hide register form
+    document.getElementById('loginCard').style.display = 'block'; // Show login form
+  } else {
+    registerError.style.display = 'block';
+    registerError.innerText = data.error;
+  }
+});
+
+// Switch to Register form
+showRegisterFormBtn.addEventListener('click', () => {
+  document.getElementById('loginCard').style.display = 'none';
+  document.getElementById('registerCard').style.display = 'block';
+});
+
+// Switch to Login form
+showLoginFormBtn.addEventListener('click', () => {
+  document.getElementById('registerCard').style.display = 'none';
+  document.getElementById('loginCard').style.display = 'block';
+});
+
 // Logout function
 function logout() {
   localStorage.removeItem('authToken');
@@ -58,8 +106,14 @@ sendButton.addEventListener('click', handleChat);
 
 // Handle chat interaction
 async function handleChat() {
-  const input = userInput.value;
-  
+  const input = userInput.value.trim();
+
+  // Check if the input is empty
+  if (input === '') {
+    alert('Chatbox is empty. Please enter a product search.');
+    return; // Prevent further execution if input is empty
+  }
+
   // Add user message to the chat
   const userMessage = document.createElement('div');
   userMessage.classList.add('message');
