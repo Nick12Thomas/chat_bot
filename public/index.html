@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Interface</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Authentication Section -->
+  <div id="authContainer">
+    <h2>Login to Chat</h2>
+    <form id="loginForm">
+      <div>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" required>
+      </div>
+      <div>
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p id="loginError" style="color: red; display: none;">Invalid credentials, please try again.</p>
+  </div>
+
+  <!-- Chat Section -->
+  <div id="chatContainer" style="display: none;">
+    <div id="chatBox" class="chat-box"></div>
+
+    <!-- Product Search -->
+    <div id="productList" class="product-list"></div>
+
+    <!-- User Input -->
+    <input type="text" id="userInput" placeholder="Ask me something..." />
+    <button id="sendButton">Send</button>
+    
+    <!-- Reset Conversation Button -->
+    <button id="resetButton">Reset Conversation</button>
+
+    <!-- Logout Button -->
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
