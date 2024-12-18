@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const path = require('path');
-const sqlite3 = require('sqlite3').verbose(); // Use SQLite for the database
-
+const { clear } = require('console');
+const sqlite3 = require('sqlite3').verbose(); 
 const app = express();
 const port = 3000;
 

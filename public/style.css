@@ -80,14 +80,16 @@ form {
 /* Chatbot Interface */
 .chat-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 50%; /* Position it vertically in the middle */
+  left: 50%; /* Position it horizontally in the middle */
+  transform: translate(-50%, -50%); /* Adjust to perfectly center it */
   width: 300px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 9999;
+  padding: 15px;
 }
 
 .chat-header {
