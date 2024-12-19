@@ -1,4 +1,5 @@
-Project Documentation: E-commerce Chatbot with Login and Search Features
+Project Documentation: 
+E-commerce Chatbot with Login and Search Features
 
 1. Project Overview
 
@@ -14,7 +15,7 @@ Frontend
 	•	Displays appropriate error messages for invalid credentials.
 	•	Maintains the user session using localStorage.
 	2.	Chatbot Interface
-	•	Allows users to ask queries about products.
+	•	Allows users to ask queries about products(under development).
 	•	Displays search results with product details.
 	•	Features a conversation reset button to clear chat history.
 	•	Tracks session timestamps for chat messages.
@@ -32,7 +33,7 @@ Backend
 	•	Searches a database of products based on user input and returns matching results.
 	•	Fetches product details by product ID.
 	3.	Session and Chat Management
-	•	Maintains chat history with session timestamps for later analysis.
+	•	Maintains chat history with session timestamps for later analysis.(currently not functioning)
 	4.	Database
 	•	Uses SQLite for storing user data (email, password, token).
 	•	Fetches product data from a products.json file.
@@ -102,7 +103,7 @@ Frontend
 Backend
 	1.	Login Endpoint
 	•	URL: POST /api/login
-	•	Request Body: { "email": "user@example.com", "password": "password123" }
+	•	Request Body: { "email": "nikhil@123.com", "password": "123" }
 	•	Response: { "token": "sample-token-123" }
 	2.	Product Search Endpoint
 	•	URL: GET /api/products?search=product_name
@@ -162,5 +163,3 @@ Sample Product (from products.json):
   "description": "A high-precision wireless mouse.",
   "price": 25.99
 }
-
-This documentation provides a complete overview of the project, including setup, usage, and file structure, making it easy for others to understand and maintain the codebase.
