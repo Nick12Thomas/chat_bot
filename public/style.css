@@ -1,11 +1,9 @@
-/* Basic reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: Arial, sans-serif;
   background-color: #F9E6CF;
@@ -16,7 +14,6 @@ body {
   flex-direction: column;
 }
 
-/* Authentication container styles */
 .center-container {
   display: flex;
   justify-content: center;
@@ -25,7 +22,6 @@ body {
   flex-direction: column;
 }
 
-/* Authentication Forms */
 .auth-card {
   background-color: #FFF5D7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,9 +31,9 @@ body {
   max-width: 400px;
   margin: 20px;
   position: absolute;
-  top: 50%; /* Vertically center */
-  left: 50%; /* Horizontally center */
-  transform: translate(-50%, -50%); /* Adjust positioning */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
 h2 {
   text-align: center;
@@ -79,29 +75,28 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* Chatbot Container */
 .chat-container {
   position: fixed;
-  top: 50%; /* Vertically center the chatbot */
-  left: 50%; /* Horizontally center the chatbot */
-  transform: translate(-50%, -50%); /* Adjust to perfectly center it */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
   display: flex;
-  flex-direction: row; /* Align chat and products horizontally */
+  flex-direction: row; 
   background-color: #FFF5D7;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   padding: 15px;
-  width: 600px; /* Adjust to allow space for both chat and products */
+  width: 600px; 
 }
 
 .chat-box {
-  flex: 1; /* Allow chat to take up remaining space */
+  flex: 1; 
   padding: 10px;
   max-height: 300px;
   overflow-y: auto;
-  border-right: 1px solid #ddd; /* Border between chat and product list */
+  border-right: 1px solid #ddd; 
 }
 
 .input-container {
@@ -135,7 +130,6 @@ button:hover {
   background-color: #218838;
 }
 
-/* Message Styling */
 .user-message {
   text-align: right;
   margin: 5px;
@@ -166,13 +160,12 @@ button:hover {
   color: black;
 }
 
-/* Product List Styling */
 .product-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 10px 0;
-  width: 250px; /* Define width for the product list */
+  width: 250px; 
   overflow-y: auto;
 }
 
@@ -212,7 +205,6 @@ button:hover {
   background-color: #218838;
 }
 
-/* Buttons and Links */
 .btn, .link-btn {
   width: 100%;
   padding: 12px;

@@ -164,7 +164,7 @@ function displayProducts(products) {
   });
 }
 
-// Handle buying product (mock buy process)
+// (mock buy process)
 function buyProduct(productId) {
   alert(`You selected product ID: ${productId}. (Mock buy process)`);
 }
